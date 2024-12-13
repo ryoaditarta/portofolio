@@ -12,37 +12,36 @@ const lato = Lato({
 const Page = () => {
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="relative z-0 flex flex-col px-20 py-20 w-5/6 bg-opacity-70 h-full bg-black items-center">
+      <div className="relative z-0 flex flex-col px-10 py-20 w-5/6 bg-opacity-70 h-full bg-black items-center">
         {/* Contacts */}
-        <h1 className={`${lato.className} text-4xl font-bold text-white text-center my-10`}>Contacts</h1>
-        <div className="flex gap-6">
-          {/* Social Media Icons */}
+        <h1 className={`${lato.className} sm:text-4xl text-xl font-bold text-white text-center sm:my-10 mt-5`}>Contacts:</h1>
+        <div className="flex gap-6 p-10">
           <Link href="https://www.linkedin.com/in/ryoaditarta" target="_blank">
-            <FaLinkedin className="text-white w-20 h-20 hover:text-blue-500" />
+            <FaLinkedin className="text-white size-10 sm:size-20 hover:text-blue-500" />
           </Link>
           <Link href="https://github.com/ryoaditarta" target="_blank">
-            <FaGithub className="text-white w-20 h-20 hover:text-gray-500" />
+            <FaGithub className="text-white size-10 sm:size-20 hover:text-gray-500" />
           </Link>
           <Link href="https://www.instagram.com/ryoaditarta" target="_blank">
-            <FaInstagram className="text-white w-20 h-20 hover:text-pink-500" />
+            <FaInstagram className="text-white size-10 sm:size-20 hover:text-pink-500" />
           </Link>
           <Link href="https://codeforces.com/profile/BCC_R" target="_blank">
-            <FaCode className="text-white w-20 h-20 hover:text-blue-700" />
+            <FaCode className="text-white size-10 sm:size-20 hover:text-blue-700" />
           </Link>
         </div>
 
-        <h1 className={`${lato.className} text-4xl font-bold text-white text-center my-10`}>Curriculum Vitae:</h1>
+        <h1 className={`${lato.className} sm:text-4xl text-xl font-bold text-white text-center sm:my-10 mt-5 mb-3`}>Curriculum Vitae:</h1>
         <div className="flex justify-center">
           <a
-            href="/path/to/cv.pdf" 
+            href="/cvryo.pdf" 
             target="_blank"
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-500"
+            className="px-6 py-3 bg-slate-700 text-white font-bold rounded hover:bg-blue-500"
           >
             Download CV
           </a>
         </div>
-        <h1 className={`${lato.className} text-4xl font-bold text-white text-center my-10`}>Tech Stacks: </h1>
-        <div className="w-3/4 flex flex-wrap justify-center overflow-x-auto gap-6 py-4 px-2 scrollbar-hide">
+        <h1 className={`${lato.className} sm:text-4xl text-xl font-bold text-white text-center sm:my-10 mt-5 mb-3`}>Tech Stacks: </h1>
+        <div className="sm:w-3/4 sm:h-auto h-2/5 flex flex-wrap justify-center overflow-x-auto gap-6 py-4 px-2 scrollbar-hide">
           <img src="https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
           <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
           <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
