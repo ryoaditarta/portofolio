@@ -22,7 +22,7 @@ const Page = () => {
             Hi! I&apos;m Ryo
           </h1>
           <h4 className={`${lato.className} text-xl text-gray-200 font-semibold w-[500px]`}>
-            I'm a Computer Science student with deep interest in programming, computer networks, cybersecurity and linux. I do like hardware too, and eager to learn about IoT in the near future. 
+            I&apos;m a Computer Science student with deep interest in programming, computer networks, cybersecurity and linux. I do like hardware too, and eager to learn about IoT in the near future. 
           </h4>
         </div>
       </div>
