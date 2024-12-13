@@ -2,7 +2,7 @@ import { Lato } from "next/font/google";
 import ActivityCard from "@/components/activity/ActivityCard";
 
 const lato = Lato({
-  subsets: ['Latin'],
+  subsets: ['latin'],
   weight: ['400', '700'],
 });
 
