@@ -14,7 +14,7 @@ const LinuxHeader = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center bg-gray-800 p-4 fixed top-0 left-0 right-0">
+        <div className="flex items-center z-10 justify-center bg-gray-800 p-4 fixed top-0 left-0 right-0">
             <h1 className="text-white text-xl">{currentTime}</h1>
         </div>
     );

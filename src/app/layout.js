@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <LinuxHeader className="relative z-10" />
 
         {/* Main content */}
-        <div className="relative z-10">
+        <div className="relative z-11">
           {children}
         </div>
 
