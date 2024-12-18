@@ -1,4 +1,8 @@
+'use client'
+
+import { useState, useEffect } from "react";
 import { Lato } from "next/font/google";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
 import ActivityCard from "@/components/activity/ActivityCard";
 
 const lato = Lato({
@@ -6,95 +10,67 @@ const lato = Lato({
   weight: ['400', '700'],
 });
 
-const cardData = [
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 1",
-    isi: "Sebuah project android untuk meningkatkan literasi di anak muda",
-    tanggal: "20 Desember 2024"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 2",
-    isi: "Sebuah project untuk mempelajari tentang teknologi terbaru di dunia IT",
-    tanggal: "15 Januari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-  {
-    linkfoto: "/fotoryo.png",
-    judul: "Project 3",
-    isi: "Project penelitian tentang AI dan machine learning",
-    tanggal: "1 Februari 2025"
-  },
-
-  // Add more items as needed
-];
-
 const Page = () => {
+  const jeniscard = ["Project", "Activity", "Organization"];
+  const [id, setId] = useState(0);
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    fetch("/projects.json")
+      .then((response) => response.json())
+      .then((data) => setProjectData(data))
+      .catch((error) => console.error("Error fetching card data:", error));
+  }, []);
+
+  const handleBackClick = () => {
+    setId((prevId) => (prevId - 1 + jeniscard.length) % jeniscard.length);
+  };
+
+  const handleNextClick = () => {
+    setId((prevId) => (prevId + 1) % jeniscard.length);
+  };
+
   return (
     <div className="h-screen w-full flex justify-center items-center">
       <div className="relative z-0 flex flex-col px-20 py-20 w-5/6 bg-opacity-70 h-full bg-black items-center">
-        
-        {/* Title: Recent Activities */}
-        <h1 className={`${lato.className} text-4xl font-bold text-white text-center my-10`}>Recent Activities</h1>
-
-        {/* Scrollable list of Activity Cards */}
-        <div className="flex flex-wrap gap-5 text-center items-center overflow-auto max-h-[70vh]">
-          {cardData.map((card, index) => (
-            <ActivityCard
-              key={index}
-              linkfoto={card.linkfoto}
-              judul={card.judul}
-              isi={card.isi}
-              tanggal={card.tanggal}
-              // Apply animation delay for staggered effect
-              style={{
-                animation: `falling 0.5s ease-out forwards`,
-              }}
-            />
-          ))}
+        {/* Title: Dynamic Title based on id */}
+        <div className="flex flex-row gap-5 items-center">
+          <button
+            onClick={handleBackClick}
+            className="text-white p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition"
+          >
+            <FaArrowLeft size={24} /> {/* Back Icon */}
+          </button>
+          <h1
+            className={`${lato.className} text-4xl font-bold text-white text-center my-10`}
+          >
+            {jeniscard[id]}
+          </h1>
+          <button
+            onClick={handleNextClick}
+            className="text-white p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition"
+          >
+            <FaArrowRight size={24} /> {/* Next Icon */}
+          </button>
         </div>
+
+        <div className="flex flex-wrap justify-center gap-10 text-center items-center overflow-auto max-h-[50vh] sm:max-h-[60vh]">
+        {projectData
+            .filter((project) => project.jenis === jeniscard[id].toLowerCase())
+            .map((project, index) => (
+            <ActivityCard
+                key={`${id}-${index}`} // Include 'id' in the key to force re-render
+                linkfoto={project.linkfoto}
+                judul={project.judul}
+                isi={project.isi}
+                tanggal={project.tanggal}
+                style={{
+                animation: `falling 1s ease-out forwards`,
+                }}
+            />
+            ))}
+        </div>
+
       </div>
     </div>
   );

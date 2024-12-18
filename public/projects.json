@@ -1,0 +1,66 @@
+[
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Project 1",
+      "isi": "Sebuah project android untuk meningkatkan literasi di anak muda",
+      "tanggal": "20 Desember 2024",
+      "jenis": "project"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Project 2",
+      "isi": "Sebuah project untuk mempelajari tentang teknologi terbaru di dunia IT",
+      "tanggal": "15 Januari 2025",
+      "jenis": "project"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Project 3",
+      "isi": "Project penelitian tentang AI dan machine learning",
+      "tanggal": "1 Februari 2025",
+      "jenis": "project"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Activity 1",
+      "isi": "Kegiatan workshop teknologi blockchain",
+      "tanggal": "10 Februari 2025",
+      "jenis": "activity"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Organization 1",
+      "isi": "Kegiatan rutin organisasi untuk meningkatkan kerja sama tim",
+      "tanggal": "5 Maret 2025",
+      "jenis": "organization"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Activity 2",
+      "isi": "Seminar tentang cybersecurity untuk anak muda",
+      "tanggal": "20 Maret 2025",
+      "jenis": "activity"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Organization 2",
+      "isi": "Pertemuan anggota organisasi membahas strategi untuk event tahunan",
+      "tanggal": "15 April 2025",
+      "jenis": "organization"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Project 4",
+      "isi": "Project pengembangan aplikasi web menggunakan teknologi terkini",
+      "tanggal": "1 Mei 2025",
+      "jenis": "project"
+    },
+    {
+      "linkfoto": "/fotoryo.png",
+      "judul": "Activity 3",
+      "isi": "Pelatihan penggunaan framework baru untuk pengembangan aplikasi mobile",
+      "tanggal": "10 Mei 2025",
+      "jenis": "activity"
+    }
+  ]
+  
